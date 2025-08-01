@@ -6,6 +6,11 @@ load_dotenv()  # Load environment variables from .env file
 
 app = FastAPI()# Initialize FastAPI app
 
+@app.get("/")
+def root():
+    # Health check endpoint
+    return {"msg": "🎧 Spotify AI Agent is up and vibing with The Weeknd!"}
+
 # Set up Spotify authentication manager
 auth_manager = SpotifyOAuth(
     client_id=os.getenv("SPOTIPY_CLIENT_ID"),
@@ -16,11 +21,6 @@ auth_manager = SpotifyOAuth(
 
 # Create Spotify client using the auth manager
 sp = Spotify(auth_manager=auth_manager)
-
-@app.get("/")
-def root():
-    # Health check endpoint
-    return {"msg": "🎧 Spotify AI Agent is up and vibing with The Weeknd!"}
 
 @app.post("/command")
 async def handle_command(request: Request):
@@ -86,3 +86,4 @@ async def handle_command(request: Request):
 
     # Fallback response for unknown commands
     return {"msg": "Command received, but I didn't quite get the vibe."}
+#uvicorn server.server:app --reload
