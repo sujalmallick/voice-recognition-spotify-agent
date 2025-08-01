@@ -1,27 +1,16 @@
-🎧 Spotify AI Agent
+ Voice Recognition Spotify Agent (Dobby Mode)
 
-Control your Spotify using simple natural language commands directly from the terminal. Built with FastAPI, Spotipy, and Python.
+A Python-based voice assistant that listens for a hotword (`dobby`) and executes Spotify commands — no LLMs, just simple rule-based mapping.
 
-## 💡 What It Does
+Features
 
-- 🎶 Play any song by name
-- ⏯️ Pause, resume, skip tracks
-- 🔊 Adjust volume
-- ⚡ Command it all via a friendly CLI
+- 🎤 **Hotword Detection**: Activates when you say "`dobby`"
+- 🎧 **Spotify Control**: Play, pause, skip, adjust volume
+- 🧠 **Predefined Commands**: Hardcoded logic for basic playback actions
 
-## 🛠️ Tech Stack
+ Tech Stack
 
-- **FastAPI** – API server for handling commands
-- **Spotipy** – Spotify Web API wrapper
-- **Python** – Core logic + CLI
-- **dotenv** – Load environment variables securely
-
-## 📦 How to Use
-
-1. **Clone the repo**
-
-```bash
-git clone https://github.com/your-username/spotify-ai-agent
-cd spotify-ai-agent
-and run the server file using uvicorn server.server:app --reload
-after its running open the prompt.py file and then run python prompt.py , it will run succesfully.
+1.Python
+2. speech_recognition(Google Web Speech API)
+3.spotipy for Spotify control
+4.CLI-based interaction
